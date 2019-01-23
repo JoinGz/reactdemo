@@ -29,14 +29,14 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="home">I'm Home!</div>
-        <div className="">
+        <div className="home dn">I'm Home!</div>
+        <div className="dn">
           现在时间是:{this.state.date.toLocaleTimeString()}
         </div>
-        {/* <SiderDemo/> */}
-        <button onClick={this.changeBool}>
+        <SiderDemo/>
+        {/* <button onClick={this.changeBool}>
           {this.state.bool === true ? 'on' : 'off'}
-        </button>
+        </button> */}
       </div>
     )
   }

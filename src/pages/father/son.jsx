@@ -11,6 +11,8 @@ export default class Son extends Component {
   }
   componentDidMount () {
     console.log(this.props)
+    console.log(this.state);
+    
   }
   render() {
     return (
@@ -21,6 +23,7 @@ export default class Son extends Component {
         </li>
         <li><button onClick={this.changeFatherNum}>传值给父元素为666</button></li>
         <li>父元素现在的数据:{this.props.fatherNum}</li>
+        {/* <li>react-redux里面的值：{this.props.reactX.user}</li> */}
       </ul>
     )
   }

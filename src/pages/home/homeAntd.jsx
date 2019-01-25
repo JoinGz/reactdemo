@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
   Route,
   Link,
   Switch,
@@ -33,11 +32,10 @@ class SiderDemo extends React.Component {
   static contextTypes = {
     router: PropTypes.object
   }
-  constructor(props, context) {
-    super(props, context)
-  }
   state = {
     collapsed: false
+  }
+  componentDidMount () {
   }
   toComputer = () => {
     // 失败

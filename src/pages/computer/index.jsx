@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Link, Redirect } from 'react-router-dom'
+import {  Link } from 'react-router-dom'
 class Computer extends Component {
   changePath = () => {
     this.props.history.push({

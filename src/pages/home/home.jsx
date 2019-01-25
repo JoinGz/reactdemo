@@ -5,9 +5,7 @@ import SiderDemo from './homeAntd'
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Switch,
-  Redirect
 } from 'react-router-dom';
 import Bundle from '../../router-auth/anysc'
 const Login = (props) => (

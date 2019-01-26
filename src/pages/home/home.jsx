@@ -26,6 +26,8 @@ class Home extends Component {
     // setInterval(() => {
     //   this.changeTime()
     // }, 1000)
+    console.log(this.props);
+    
   }
   changeTime() {
     this.setState({
@@ -46,12 +48,8 @@ class Home extends Component {
         </div>
         <Router>
           <Switch>
-            {/* {' '} */}
-            {/*exact实现精确匹配（匹配到第一个就不往下继续匹配）*/}
             <Route path="/login" component={Login} />
-
             <Route path="/" component={SiderDemo} />
-            {/* <Route path="/login" component={Login} /> */}
           </Switch>
         </Router>
         {/* <button onClick={this.changeBool}>

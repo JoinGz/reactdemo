@@ -6,12 +6,12 @@ const defaultState = {
   user: null,
   data: {
     test: '001',
-    a:555
+    a: 555
   },
   arr: [123, 777]
 }
 // actions 定义触发的方法;每一个connect定义自己的方法或者写个action.js直接引入
-let uploadUser = (arg)=> ({
+let uploadUser = arg => ({
   type: 'uploadUser',
   arg
 })
@@ -23,7 +23,11 @@ let reducer = (state = defaultState, action) => {
       data.user = action.arg
       return data
     case 'delUser':
-      return 7
+      return data
+    case 'Aadd':
+      data.data.a++
+      // 返回的东西和原来的结构一致，不能单独返回data.data.a
+      return data
     default:
       return data
   }
@@ -41,8 +45,9 @@ function mapStateToProps(state) {
 //需要触发什么行为；同上
 function mapDispatchToProps(dispatch) {
   return {
-    uploadUser: (arg) => dispatch(uploadUser(arg)),
-    delUser: () => dispatch({ type: 'delUser' })
+    uploadUser: arg => dispatch(uploadUser(arg)),
+    delUser: () => dispatch({ type: 'delUser' }),
+    add: () => dispatch({ type: 'Aadd' })
   }
 }
 

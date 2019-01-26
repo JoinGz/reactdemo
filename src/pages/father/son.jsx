@@ -4,7 +4,7 @@ import { Input, Icon } from 'antd'
 //需要渲染什么数据;看方法名字；把state状态绑定到props上。里面多深的子元素就可以直接拿取了
 function mapStateToProps(state) {
   return {
-    reactX: state
+    reactX: state.user
   }
 }
 let uploadUser = arg => ({
@@ -42,7 +42,9 @@ class Son1 extends Component {
   componentDidMount() {
     console.log(this.props)
   }
-  uploadUser = () => {
+  uploadUser = (e) => {
+    // console.log(e);
+    // e.stopPropagation()
     this.props.uploadUser(this.state.userName)
   }
   render() {
@@ -62,7 +64,7 @@ class Son1 extends Component {
           <button onClick={this.changeFatherNum}>传值给父元素为666</button>
         </li>
         <li>父元素现在的数据:{this.props.fatherNum}</li>
-        <li>react-redux里面的user值：{this.props.reactX.user}</li>
+        <li>react-redux里面的user值：{this.props.reactX}</li>
         <button onClick={this.uploadUser}>改变redux里面的值</button>
         <Input
           placeholder="Enter your username"

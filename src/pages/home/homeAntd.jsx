@@ -109,7 +109,7 @@ class SiderDemo extends React.Component {
             </SubMenu>
             <Menu.Item key="9">
               <Icon type="file" />
-              <span>File</span>
+              <span>hooks</span>
             </Menu.Item>
           </Menu>
         </Sider>

@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import hoctest from '../hoc/index.jsx'
+import hocc from '../hoc/test.jsx'
+import hocinput from '../hoc/hocInput.jsx'
+import input from '../hoc/input.jsx'
+let Hoccc = hoctest(hocc)
+let Input = hocinput(input)
 class About extends Component {
   changePath = () => {
     this.props.history.push({
@@ -7,7 +13,7 @@ class About extends Component {
     });
   };
   componentDidMount(){
-    console.log(this.props);
+    // console.log(this.props);
   }
   render() {
     return (
@@ -24,6 +30,8 @@ class About extends Component {
           )}
         />
         <p>我是query参数：{this.props.location.query ? this.props.location.query.name : ''}</p>
+        <Hoccc a='123' />
+        <Input onChange= {()=>{console.log(1)}} />
       </div>
     );
   }

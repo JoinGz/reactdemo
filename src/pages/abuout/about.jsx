@@ -4,6 +4,7 @@ import hoctest from '../hoc/index.jsx'
 import hocc from '../hoc/test.jsx'
 import hocinput from '../hoc/hocInput.jsx'
 import input from '../hoc/input.jsx'
+import Page from "../hoc/pagehoc";
 let Hoccc = hoctest(hocc)
 let Input = hocinput(input)
 class About extends Component {
@@ -32,6 +33,8 @@ class About extends Component {
         <p>我是query参数：{this.props.location.query ? this.props.location.query.name : ''}</p>
         <Hoccc a='123' />
         <Input onChange= {()=>{console.log(1)}} />
+        <p>HOC PAGE</p>
+        <Page changeData={(changeData,a)=>{console.log(changeData,a)}} url='/api/news/list' />
       </div>
     );
   }
